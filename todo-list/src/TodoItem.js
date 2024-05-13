@@ -1,13 +1,34 @@
 // TodoItem.js
-import React from 'react';
+import React, { useState } from 'react';
 
-function TodoItem({ todo, onDelete }) {
+function TodoItem({ todo, onDelete, onEdit}) {
+
+  const [isEditing, setIsEditing] = useState(false);
+  const [editText, setEditText] = useState(todo.text);
+
+  const handleEdit = () => {
+    setIsEditing(true);
+  };
+
+  const handleSave = () => {
+    onEdit(todo.id, editText);
+    setIsEditing(false);
+  };
+
   return (
     <li>
-      {/* Display the text of the todo */}
-      {todo.text} 
-      {/* Button to delete the todo */}
-      <button onClick={() => onDelete(todo.id)}>Delete</button>
+      {isEditing ? (
+        <input type="text" value={editText} onChange={(e) => setEditText(e.target.value)} />
+      ) : (
+        <>
+          {todo.text}
+          <button onClick={onDelete}>Delete</button>
+          <button onClick={handleEdit}>Edit</button>
+        </>
+      )}
+      {isEditing && (
+        <button onClick={handleSave}>Save</button>
+      )}
     </li>
   );
 }

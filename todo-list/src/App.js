@@ -26,13 +26,19 @@ function App() {
     setTodos(todos.filter(todo => todo.id !== id));
   };
 
+  // Function to edit a todo
+  const editTodo = (id, newText) => {
+    // Map over the todos array and update the text of the todo with the specified id
+    setTodos(todos.map(todo => (todo.id === id ? { ...todo, text: newText } : todo)));
+  };
+
   return (
     <div className="App">
       <div>
       <h1>Todo List</h1>
       <input type="text" value={inputValue} onChange={(e)=> setInputValue(e.target.value)}/>
       <button onClick={addTodo}>Add Todo</button>
-      <TodoList todos={todos} onDelete={deleteTodo} />
+      <TodoList todos={todos} onDelete={deleteTodo} onEdit={editTodo}/>
     </div>
     </div>
   );
