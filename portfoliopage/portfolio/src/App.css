@@ -2,41 +2,36 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f0f0f0; /* Set background color */
 }
 
 .project {
-  background-color: #f9f9f9;
+  background-color: #fff; /* Set project background color */
   padding: 20px;
-  margin: 20px;
+  margin: 20px auto; /* Center the project */
   border-radius: 10px;
-  max-width: 800px; /* Limit maximum width */
-  margin: 20px auto; /* Center the content */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow effect */
 }
 
 .project-title {
   color: #b80000;
   margin-bottom: 10px;
+  font-size: 24px; /* Increase font size */
 }
 
 .project-content {
-  margin-bottom: 20px;
-background-color: #f0f0f0; 
-padding: 10px;
+  background-color: #f9f9f9; /* Set content background color */
+  padding: 20px;
   border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add shadow effect */
 }
-
-.project-content:hover {
-  background-color: #e3e3e3; 
-
-  
-} 
 
 .project-content p {
   margin-bottom: 10px;
+  font-size: 16px; /* Increase font size */
 }
 
 .technologies {
-  background-color: #e0e0e0;
   padding: 10px;
   border-radius: 5px;
 }
@@ -44,6 +39,8 @@ padding: 10px;
 .technologies h3 {
   margin-top: 0;
   margin-bottom: 10px;
+  color: #333; /* Set text color */
+  font-size: 18px; /* Increase font size */
 }
 
 .technologies ul {
@@ -51,48 +48,19 @@ padding: 10px;
   padding: 0;
 }
 
-
 .technologies li {
-  display: inline;
+  display: inline-block; /* Change display to inline-block */
   margin-right: 10px;
   background-color: #ddd;
-  padding: 5px;
-  border-radius: 5px;
+  padding: 5px 10px; /* Add padding */
+  border-radius: 20px; /* Increase border-radius */
+  font-size: 14px; /* Decrease font size */
+  color: #555; /* Set text color */
+  text-transform: uppercase; /* Convert text to uppercase */
+  transition: background-color 0.3s ease; /* Add transition effect */
 }
 
-.technologies li:hover{
-background-color: #f0f0f0; /* Change to desired hover background color */
-color: #b80000;
-  /* padding: 10px; */
-  /* border-radius: 5px; */
-}
-/* Add animation classes */
-.animated {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.animated.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-  .project {
-      padding: 15px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .project {
-      padding: 10px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .project {
-      padding: 5px;
-  }
+.technologies li:hover {
+  background-color: #b80000; /* Change hover background color */
+  color: #fff; /* Change text color */
 }
